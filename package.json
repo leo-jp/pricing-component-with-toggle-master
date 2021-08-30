@@ -1,11 +1,9 @@
 {
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "tailwind": "tailwindcss build -i styles/styles.css -o public/styles.css --watch"
+    "sass": "sass --watch styles/sass/styles.scss:styles/css/styles.css"
   },
   "dependencies": {
-    "autoprefixer": "^10.3.3",
-    "postcss": "^8.3.6",
-    "tailwindcss": "^2.2.8"
+    "bulma": "^0.9.3",
+    "sass": "^1.38.2"
   }
 }

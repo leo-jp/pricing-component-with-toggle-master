@@ -1,0 +1,73 @@
+@charset "utf-8";
+@use "sass:map";
+@import "../../node_modules/bulma/bulma.sass";
+@import "../../node_modules/bulma/sass/layout/footer.sass";
+@import "../../node_modules/bulma/sass/helpers/flexbox.sass";
+@import "../../node_modules/bulma/sass/helpers/color.sass";
+@import "../../node_modules/bulma/sass/grid/columns.sass";
+
+$layout:("mobile": 375px, "tablet": 768px, "laptop": 992px, "desktop": 1440px);
+$primary-color:("cyan": hsl(179, 62%, 43%), "bright-yellow": hsl(71, 73%, 54%), "dark-yellow": hsl(71, 62, 52));
+$neutral-color:("white": hsl(0,0,100),"washed": hsl(206,47,93), "light-gray": hsl(204, 43%, 93%), "grayish-blue": hsl(218, 22%, 67%));
+$font:("size-16": 16px, "Karla": "Karla", "weight-400": 400, "weight-700": 700);
+
+
+html {
+    background-color: hsl(0, 0, 94);
+}
+
+div.mt-mobile {
+    margin-top: 9rem;
+}
+
+div.content {
+    ul {
+        list-style: none;
+        margin: 0;
+    }
+    
+    ul li {
+        border-bottom: 1px solid hsl(0, 0%, 90%);
+        padding: .5rem;
+    }
+
+    footer.card-footer{
+        max-width: 90%;
+    }
+}
+
+.container {
+    padding: 4rem 4rem;
+
+    &.has-background-purple-light {
+        background-color: hsl(240, 100, 98);
+    }
+
+    &.shadow {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.05);
+    }
+}
+
+@media only screen and (max-width: map.get($layout, "mobile")) {
+    div.mt-mobile {
+        margin-top: 0;   
+    }
+}
+
+@media only screen and (min-width: map.get($layout, "mobile")) and (max-width: 768px) {
+    div.mt-mobile {
+        margin-top: 0;   
+    }
+}
+
+@media only screen and (min-width: map.get($layout, "tablet")) and (max-width: 992px){
+    div.mt-mobile {
+        margin-top: 0em;
+    }
+}
+
+@media only screen and (min-width: map.get($layout, "laptop")){
+}
+
+@media only screen and (min-width: map.get($layout, "desktop")){
+}

@@ -19,6 +19,4 @@ node_modules/*
 yarn.lock
 
 # exclude files from being ignored. Mandatory for Github Pages.
-!node_modules/tailwindcss/
-!node_modules/autoprefixer/
-!node_modules/postcss/
+!node_modules/bulma/
