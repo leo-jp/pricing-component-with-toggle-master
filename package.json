@@ -3,6 +3,7 @@
     "sass": "sass --watch styles/sass/styles.scss:styles/css/styles.css"
   },
   "dependencies": {
+    "@fontsource/montserrat": "^4.5.1",
     "bulma": "^0.9.3",
     "sass": "^1.38.2"
   }

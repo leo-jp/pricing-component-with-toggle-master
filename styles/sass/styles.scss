@@ -5,34 +5,65 @@
 @import "../../node_modules/bulma/sass/helpers/flexbox.sass";
 @import "../../node_modules/bulma/sass/helpers/color.sass";
 @import "../../node_modules/bulma/sass/grid/columns.sass";
+@import "../../node_modules/@fontsource/montserrat/index.css";
+@import "../../node_modules/@fontsource/montserrat/700.css";
 
-$layout:("mobile": 375px, "tablet": 768px, "laptop": 992px, "desktop": 1440px);
-$primary-color:("cyan": hsl(179, 62%, 43%), "bright-yellow": hsl(71, 73%, 54%), "dark-yellow": hsl(71, 62, 52));
-$neutral-color:("white": hsl(0,0,100),"washed": hsl(206,47,93), "light-gray": hsl(204, 43%, 93%), "grayish-blue": hsl(218, 22%, 67%));
-$font:("size-16": 16px, "Karla": "Karla", "weight-400": 400, "weight-700": 700);
+$layout:("xs-mobile": 320px, "mobile": 375px, "tablet": 768px, "laptop": 992px, "desktop": 1440px);
+$primary-color:("light":hsl(236, 72%, 79%), "dark": hsl(237, 63%, 64%));
+$neutral-color:("very-light-grayish-blue": hsl(240, 78%, 98%),
+                "light-grayish-blue": hsl(234, 14%, 74%),
+                "grayish-blue": hsl(233, 13%, 49%),
+                "dark-grayish-blue": hsl(232, 13%, 33%));
+$font:("size-15": 15px, "family-montserrat": "Montserrat", "weight-700": 700);
 
+* {
+    padding: 0px;
+    margin: 0px;
+}
 
 html {
-    background-color: hsl(0, 0, 94);
+    background-color: map.get($neutral-color, "very-light-grayish-blue");  
 }
 
-div.mt-mobile {
-    margin-top: 9rem;
+body {
+    font-size: map.get($font, "size-15");
+    font-family: (map.get($font, "family-montserrat"), sans-serif);
+    font-weight: map.get($font, "weight-700");
 }
 
-div.content {
-    ul {
-        list-style: none;
-        margin: 0;
-    }
-    
-    ul li {
-        border-bottom: 1px solid hsl(0, 0%, 90%);
-        padding: .5rem;
+.card-highlight {
+    background-color: map.get($primary-color, "dark");
+    background-image: linear-gradient(to bottom, 
+                                    map.get($primary-color, "light"), 
+                                    map.get($primary-color, "dark"));
+                                    
+    h2, ul li, ul li span{
+        color: map.get($neutral-color, "very-light-grayish-blue");
     }
 
-    footer.card-footer{
-        max-width: 90%;
+    a {
+        background-color: map.get($neutral-color, "very-light-grayish-blue");
+        color: map.get($primary-color, "dark");
+    }
+}
+
+.card-default {
+    background-color: map.get($neutral-color, "very-light-grayish-blue");
+
+    h2, ul li {
+        color: map.get($neutral-color, "grayish-blue");
+    }
+
+    span.price {
+        color: map.get($neutral-color, "dark-grayish-blue");
+    }
+
+    a {
+        color: map.get($neutral-color, "very-light-grayish-blue");
+        background-color: map.get($primary-color, "dark");
+        background-image: linear-gradient(to left, 
+                                    map.get($primary-color, "dark"), 
+                                    map.get($primary-color, "light"));
     }
 }
 
@@ -48,19 +79,46 @@ div.content {
     }
 }
 
-@media only screen and (max-width: map.get($layout, "mobile")) {
-    div.mt-mobile {
-        margin-top: 0;   
+div.mt-mobile {
+    margin-top: 2rem;
+}
+
+.content {
+    h1, span {
+        color: map.get($neutral-color, "grayish-blue");
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+    }
+    
+    ul li {
+        border-bottom: 1px solid hsl(0, 0%, 90%);
+        padding: .5rem;
+    }
+
+    footer.card-footer{
+        max-width: 90%;
     }
 }
 
-@media only screen and (min-width: map.get($layout, "mobile")) and (max-width: 768px) {
+@media only screen and (max-width: map.get($layout, "mobile")),
+only screen and (min-width: map.get($layout, "mobile")) and (max-width: 768px) {
+    .container {
+        padding: 1rem 1rem;
+    }
+
     div.mt-mobile {
         margin-top: 0;   
     }
 }
 
 @media only screen and (min-width: map.get($layout, "tablet")) and (max-width: 992px){
+    .container {
+        padding: 2rem 2rem;
+    }
+
     div.mt-mobile {
         margin-top: 0em;
     }

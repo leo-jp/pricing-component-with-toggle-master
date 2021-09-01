@@ -1,6 +1,8 @@
 @charset "UTF-8";
 /*! bulma.io v0.9.3 | MIT License | github.com/jgthms/bulma */
 /* Bulma Utilities */
+@import "../../node_modules/@fontsource/montserrat/index.css";
+@import "../../node_modules/@fontsource/montserrat/700.css";
 .pagination-previous,
 .pagination-next,
 .pagination-link,
@@ -12507,24 +12509,46 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   }
 }
 
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
 html {
-  background-color: #f0f0f0;
+  background-color: #f6f6fe;
 }
 
-div.mt-mobile {
-  margin-top: 9rem;
+body {
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
 }
 
-div.content ul {
-  list-style: none;
-  margin: 0;
+.card-highlight {
+  background-color: #696fdd;
+  background-image: linear-gradient(to bottom, #a3a8f0, #696fdd);
 }
-div.content ul li {
-  border-bottom: 1px solid #e6e6e6;
-  padding: 0.5rem;
+.card-highlight h2, .card-highlight ul li, .card-highlight ul li span {
+  color: #f6f6fe;
 }
-div.content footer.card-footer {
-  max-width: 90%;
+.card-highlight a {
+  background-color: #f6f6fe;
+  color: #696fdd;
+}
+
+.card-default {
+  background-color: #f6f6fe;
+}
+.card-default h2, .card-default ul li {
+  color: #6d708d;
+}
+.card-default span.price {
+  color: #494c5f;
+}
+.card-default a {
+  color: #f6f6fe;
+  background-color: #696fdd;
+  background-image: linear-gradient(to left, #696fdd, #a3a8f0);
 }
 
 .container {
@@ -12537,17 +12561,39 @@ div.content footer.card-footer {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
 }
 
-@media only screen and (max-width: 375px) {
-  div.mt-mobile {
-    margin-top: 0;
-  }
+div.mt-mobile {
+  margin-top: 2rem;
 }
-@media only screen and (min-width: 375px) and (max-width: 768px) {
+
+.content h1, .content span {
+  color: #6d708d;
+}
+.content ul {
+  list-style: none;
+  margin: 0;
+}
+.content ul li {
+  border-bottom: 1px solid #e6e6e6;
+  padding: 0.5rem;
+}
+.content footer.card-footer {
+  max-width: 90%;
+}
+
+@media only screen and (max-width: 375px), only screen and (min-width: 375px) and (max-width: 768px) {
+  .container {
+    padding: 1rem 1rem;
+  }
+
   div.mt-mobile {
     margin-top: 0;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 992px) {
+  .container {
+    padding: 2rem 2rem;
+  }
+
   div.mt-mobile {
     margin-top: 0em;
   }
