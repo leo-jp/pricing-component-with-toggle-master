@@ -36,7 +36,9 @@ body {
     background-image: linear-gradient(to bottom, 
                                     map.get($primary-color, "light"), 
                                     map.get($primary-color, "dark"));
-                                    
+    height: 35rem;
+    padding-top: 2rem;
+
     h2, ul li, ul li span{
         color: map.get($neutral-color, "very-light-grayish-blue");
     }
@@ -49,13 +51,10 @@ body {
 
 .card-default {
     background-color: map.get($neutral-color, "very-light-grayish-blue");
+    margin-top: 2rem;
 
     h2, ul li {
         color: map.get($neutral-color, "grayish-blue");
-    }
-
-    span.price {
-        color: map.get($neutral-color, "dark-grayish-blue");
     }
 
     a {
@@ -64,6 +63,24 @@ body {
         background-image: linear-gradient(to left, 
                                     map.get($primary-color, "dark"), 
                                     map.get($primary-color, "light"));
+    }
+}
+
+.price {
+    font-size: 5rem;
+
+    &.price-default {
+        color: map.get($neutral-color, "dark-grayish-blue");
+    }
+
+    &.price-highlight {
+        color: map.get($neutral-color, "very-light-grayish-blue");
+    }
+
+    &.dollar {
+        font-size: 2.5rem;
+        vertical-align: 0.9rem;
+        margin-right: .5rem;
     }
 }
 
@@ -95,7 +112,7 @@ div.mt-mobile {
     
     ul li {
         border-bottom: 1px solid hsl(0, 0%, 90%);
-        padding: .5rem;
+        padding:  1rem 1rem 1rem 0;
     }
 
     footer.card-footer{
@@ -103,8 +120,9 @@ div.mt-mobile {
     }
 }
 
-@media only screen and (max-width: map.get($layout, "mobile")),
-only screen and (min-width: map.get($layout, "mobile")) and (max-width: 768px) {
+@media only screen and (max-width: map.get($layout, "xs-mobile")),
+only screen and (max-width: map.get($layout, "mobile")),
+only screen and (max-width: map.get($layout, "tablet")) {
     .container {
         padding: 1rem 1rem;
     }
@@ -112,19 +130,64 @@ only screen and (min-width: map.get($layout, "mobile")) and (max-width: 768px) {
     div.mt-mobile {
         margin-top: 0;   
     }
+
+    .card-highlight {
+        height: auto;
+        padding-top: 0;
+    }
+
+    .card-default {
+        margin-top: auto;
+    }
 }
 
-@media only screen and (min-width: map.get($layout, "tablet")) and (max-width: 992px){
+@media only screen and (max-width: map.get($layout, "xs-mobile")) {
+    .price {
+        font-size: 3.5rem;
+    
+        &.dollar {
+            font-size: 2rem;
+            vertical-align: 0.5rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 321px) and (max-width: map.get($layout, "mobile")) {
+    .price {
+        font-size: 4rem;
+    
+        &.dollar {
+            font-size: 2.5rem;
+            vertical-align: 0.5rem;
+        }
+    }
+}
+
+@media screen and (min-width: map.get($layout, "mobile")) and (max-width: map.get($layout, "tablet")) {
+    .price {
+        font-size: 4.5rem;
+    
+        &.dollar {
+            font-size: 2.8rem;
+            vertical-align: 0.5rem;
+        }
+    }
+}
+
+@media only screen and (min-width: map.get($layout, "tablet")) and (max-width: map.get($layout, "laptop")),
+only screen and (min-width: map.get($layout, "laptop")){
     .container {
         padding: 2rem 2rem;
     }
 
-    div.mt-mobile {
-        margin-top: 0em;
+    .price {
+        font-size: 4rem;
+    
+        &.dollar {
+            font-size: 2.5rem;
+            vertical-align: 0.5rem;
+        }
     }
-}
-
-@media only screen and (min-width: map.get($layout, "laptop")){
 }
 
 @media only screen and (min-width: map.get($layout, "desktop")){

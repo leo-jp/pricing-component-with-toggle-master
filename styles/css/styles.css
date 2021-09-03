@@ -12527,6 +12527,8 @@ body {
 .card-highlight {
   background-color: #696fdd;
   background-image: linear-gradient(to bottom, #a3a8f0, #696fdd);
+  height: 35rem;
+  padding-top: 2rem;
 }
 .card-highlight h2, .card-highlight ul li, .card-highlight ul li span {
   color: #f6f6fe;
@@ -12538,17 +12540,30 @@ body {
 
 .card-default {
   background-color: #f6f6fe;
+  margin-top: 2rem;
 }
 .card-default h2, .card-default ul li {
   color: #6d708d;
-}
-.card-default span.price {
-  color: #494c5f;
 }
 .card-default a {
   color: #f6f6fe;
   background-color: #696fdd;
   background-image: linear-gradient(to left, #696fdd, #a3a8f0);
+}
+
+.price {
+  font-size: 5rem;
+}
+.price.price-default {
+  color: #494c5f;
+}
+.price.price-highlight {
+  color: #f6f6fe;
+}
+.price.dollar {
+  font-size: 2.5rem;
+  vertical-align: 0.9rem;
+  margin-right: 0.5rem;
 }
 
 .container {
@@ -12574,13 +12589,13 @@ div.mt-mobile {
 }
 .content ul li {
   border-bottom: 1px solid #e6e6e6;
-  padding: 0.5rem;
+  padding: 1rem 1rem 1rem 0;
 }
 .content footer.card-footer {
   max-width: 90%;
 }
 
-@media only screen and (max-width: 375px), only screen and (min-width: 375px) and (max-width: 768px) {
+@media only screen and (max-width: 320px), only screen and (max-width: 375px), only screen and (max-width: 768px) {
   .container {
     padding: 1rem 1rem;
   }
@@ -12588,14 +12603,54 @@ div.mt-mobile {
   div.mt-mobile {
     margin-top: 0;
   }
+
+  .card-highlight {
+    height: auto;
+    padding-top: 0;
+  }
+
+  .card-default {
+    margin-top: auto;
+  }
 }
-@media only screen and (min-width: 768px) and (max-width: 992px) {
+@media only screen and (max-width: 320px) {
+  .price {
+    font-size: 3.5rem;
+  }
+  .price.dollar {
+    font-size: 2rem;
+    vertical-align: 0.5rem;
+  }
+}
+@media only screen and (min-width: 321px) and (max-width: 375px) {
+  .price {
+    font-size: 4rem;
+  }
+  .price.dollar {
+    font-size: 2.5rem;
+    vertical-align: 0.5rem;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 768px) {
+  .price {
+    font-size: 4.5rem;
+  }
+  .price.dollar {
+    font-size: 2.8rem;
+    vertical-align: 0.5rem;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 992px), only screen and (min-width: 992px) {
   .container {
     padding: 2rem 2rem;
   }
 
-  div.mt-mobile {
-    margin-top: 0em;
+  .price {
+    font-size: 4rem;
+  }
+  .price.dollar {
+    font-size: 2.5rem;
+    vertical-align: 0.5rem;
   }
 }
 
