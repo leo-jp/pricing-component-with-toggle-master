@@ -1,12 +1,5 @@
 @charset "utf-8";
 @use "sass:map";
-@import "../../node_modules/bulma/bulma.sass";
-@import "../../node_modules/bulma/sass/layout/footer.sass";
-@import "../../node_modules/bulma/sass/helpers/flexbox.sass";
-@import "../../node_modules/bulma/sass/helpers/color.sass";
-@import "../../node_modules/bulma/sass/grid/columns.sass";
-@import "../../node_modules/@fontsource/montserrat/index.css";
-@import "../../node_modules/@fontsource/montserrat/700.css";
 
 $layout:("xs-mobile": 320px, "mobile": 375px, "tablet": 768px, "laptop": 992px, "desktop": 1440px);
 $primary-color:("light":hsl(236, 72%, 79%), "dark": hsl(237, 63%, 64%));
@@ -15,6 +8,21 @@ $neutral-color:("very-light-grayish-blue": hsl(240, 78%, 98%),
                 "grayish-blue": hsl(233, 13%, 49%),
                 "dark-grayish-blue": hsl(232, 13%, 33%));
 $font:("size-15": 15px, "family-montserrat": "Montserrat", "weight-700": 700);
+$switch-background-active: linear-gradient(to right, 
+                                            map.get($primary-color, "light"), 
+                                            map.get($primary-color, "dark"));
+$switch-background:linear-gradient(to right, 
+                                    map.get($primary-color, "light"), 
+                                    map.get($primary-color, "dark"));
+
+@import "../../node_modules/bulma/bulma.sass";
+@import "../../node_modules/bulma/sass/layout/footer.sass";
+@import "../../node_modules/bulma/sass/helpers/flexbox.sass";
+@import "../../node_modules/bulma/sass/helpers/color.sass";
+@import "../../node_modules/bulma/sass/grid/columns.sass";
+@import "../../node_modules/bulma-switch/src/sass/index.sass";
+@import "../../node_modules/@fontsource/montserrat/index.css";
+@import "../../node_modules/@fontsource/montserrat/700.css";
 
 * {
     padding: 0px;
@@ -101,8 +109,13 @@ div.mt-mobile {
 }
 
 .content {
-    h1, span {
+    h1 {
         color: map.get($neutral-color, "grayish-blue");
+    }
+
+    span {
+        color: map.get($neutral-color, "light-grayish-blue");
+        margin: .5rem;
     }
 
     ul {

@@ -15,8 +15,12 @@
     <main>
       <div class="content has-text-centered">
         <h1>Our Pricing</h1>
-        <span>Annually</span>
-        <span>Monthly</span>
+        <span class="field pricing-toggle">
+          <span for="pricing-switch">Annually</span>
+          <input id="pricing-switch" type="checkbox" name="pricing-switch" class="switch is-rounded is-medium" checked="checked">
+          <label for="pricing-switch"></label>
+          <span for="pricing-switch">Monthly</span>
+        </span>
       </div>
 
       <div class="columns is-variable is-1-mobile is-0-tablet is-0-desktop is-0-widescreen is-0-fullhd">
